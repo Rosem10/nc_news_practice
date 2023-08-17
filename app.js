@@ -10,11 +10,12 @@ const {
 
 const app = express();
 
-hello = hi
-
 app.use(cors());
 app.use(express.static('public'));
 app.use(express.json());
+app.get('/api/hello', (req, res, next) => {
+  res.status(200).send({ msg: "hello"})
+})
 
 app.use('/api', apiRouter);
 
